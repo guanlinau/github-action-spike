@@ -9,4 +9,5 @@ jobs:
       - run: |
           node -v
           npm -v
-          console.log("Hello World")
+          python -V
+          print("Hello from Python")
