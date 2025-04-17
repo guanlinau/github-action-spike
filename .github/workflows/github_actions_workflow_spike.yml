@@ -19,8 +19,8 @@ jobs:
       - run: echo "${{ github.actor }} is testing out GitHub Actions for Node.js🚀"
       - name: print_env
         env:
-          super_env: ${{ secrets.VARIABLES_ONE}}
-          super_secret: ${{ secrets.SECRET_ONE}}
+          super_env: ${{ vars.VARIABLES_ONE }}
+          super_secret: ${{ secrets.SECRET_ONE }}
         run: |
           echo "$super_env"
           echo "$super_secret"
