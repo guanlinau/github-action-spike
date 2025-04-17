@@ -24,13 +24,14 @@ jobs:
         run: |
           echo "$super_env"
           echo "$super_secret"
+      - name: checkout
+        uses: actions/checkout@v4
       - name: run_node
         run: |
           node --version
           npm --version
           ls -l
           echo ${{ github.workspace }}
-          cd ${{ github.workspace }}
           ls -l
           echo "Running Node.js script..."
           node node.js
