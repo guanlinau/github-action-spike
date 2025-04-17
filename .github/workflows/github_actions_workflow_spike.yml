@@ -24,3 +24,14 @@ jobs:
         run: |
           echo "$super_env"
           echo "$super_secret"
+      - name: run_node
+        run: |
+          node --version
+          npm --version
+          echo "Running Node.js script..."
+          node node.js
+      - name: run_python
+        run: |
+          python --version
+          echo "Running Python script..."
+          python python.py
