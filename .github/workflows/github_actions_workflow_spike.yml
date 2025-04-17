@@ -1,13 +1,26 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on:
+  push:
+    branches:
+      - "main"
+      - "feature/**"
+      - "!feature/**-v1"
+  pull_request:
+    branches:
+      - "main"
+    types:
+      - opened
+
 jobs:
   Spike-GitHub-Actions-Node:
     runs-on: ubuntu-latest
     steps:
       - run: echo "${{ github.actor }} is testing out GitHub Actions for Node.js🚀"
-      - run: |
-          node -v
-          npm -v
-          python -V
-          print("Hello from Python")
+      - name: print_env
+        env:
+          super_env: ${{ secrets.VARIABLES_ONE}}
+          super_secret: ${{ secrets.SECRET_ONE}}
+        run: |
+          print "$super_env"
+          print "$super_secret"
