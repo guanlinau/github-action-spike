@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "${{ github.actor }} is testing out GitHub Actions for Node.js🚀"
+      - name: checkout repo
+        uses: actions/checkout@v4
       - name: print_env
         env:
           super_env: ${{ vars.VARIABLES_ONE }}
@@ -24,19 +26,18 @@ jobs:
         run: |
           echo "$super_env"
           echo "$super_secret"
-      - name: checkout
-        uses: actions/checkout@v4
       - name: run_node
         run: |
           node --version
           npm --version
-          ls -l
           echo ${{ github.workspace }}
-          ls -l
+          pwd
           echo "Running Node.js script..."
           node node.js
       - name: run_python
         run: |
           python --version
+          echo ${{ github.workspace }}
+          pwd
           echo "Running Python script..."
           python python.py
