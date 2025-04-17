@@ -28,7 +28,7 @@ jobs:
         run: |
           node --version
           npm --version
-          echo {{ github.workspace }}
+          echo ${{ github.workspace }}
           echo "Running Node.js script..."
           node node.js
       - name: run_python
