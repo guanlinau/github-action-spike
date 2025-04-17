@@ -2,9 +2,11 @@ name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  Spike-GitHub-Actions-Node:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.actor }} is testing out GitHub Actions 🚀"
-      - run: echo "${{ github}} is the name of the workflow"
-      - run: echo "${{ github.action }} is the name of the event that triggered the workflow"
+      - run: echo "${{ github.actor }} is testing out GitHub Actions for Node.js🚀"
+      - run: |
+          node -v
+          npm -v
+          console.log("Hello World")
