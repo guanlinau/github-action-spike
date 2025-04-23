@@ -11,6 +11,7 @@ on:
       - "main"
     types:
       - opened
+  workflow_dispatch:
 
 jobs:
   Spike-GitHub-Actions-Node:
