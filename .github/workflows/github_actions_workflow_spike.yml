@@ -1,5 +1,5 @@
 name: GitHub Actions Demo
-run-name: ${{ github.actor }} $CI is testing out GitHub Actions 🚀
+run-name: $GITHUB_ACTOR is testing out GitHub Actions 🚀
 on:
   push:
     branches:
